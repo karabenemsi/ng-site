@@ -1,0 +1,133 @@
+header
+  height: 100vh
+  position: absolute
+  top: 0
+  width: 100%
+
+  .logo
+    position: absolute
+    top: 0
+    padding: 8rem 1.5rem 1.5rem
+    left: 3rem
+    z-index: 18
+    background: #fff
+    svg
+      width: 20rem
+
+  .heroimg
+    height: 100vh
+    background:
+      // image: url('../img/herobg.jpg')
+      // image: url('../img/drawsanfran.jpg')
+      // image: url('../img/88download.jpg')
+      size: cover
+      position: top center
+      attachment: fixed
+    width: 100%
+    position: absolute
+    top: 0
+    z-index: -50
+
+    .herotext
+      position: fixed
+      font-size: 1.8rem
+      color: $c_herotext
+      padding: 8vw 20vw
+
+      > *
+        text-align: right
+
+nav
+  width: 100%
+  height: 5rem
+  z-index: 120
+  border-top: 0.2rem solid $c_accent
+  color: $c_font_header
+  display: block
+  margin: 0 auto
+  box-sizing: content-box
+  background: #fff
+  padding: 0
+  box-shadow: $shw_standard
+  &.bottom
+    position: absolute
+    bottom: 0
+  &.center
+    position: fixed
+    top: calc(50vh - 2.5rem)
+
+  .container
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+  .logo
+    position: relative
+    left: 0
+    top: 0
+    height: 5rem
+    opacity: 0
+    width: 20%
+    display: block
+    // float: left
+    padding: 0
+    svg
+      height: 3rem
+      width: auto
+    a
+      display: block
+      padding: 1rem
+      margin: 0
+      transition: all 0.5s
+      &:hover
+        color: $c_accent_5
+    h1
+      margin: 0
+      font-size: 3rem
+      transition: all 0.5s
+      color: $c_font_header
+      &:hover
+        color: $c_accent_5
+    img
+      padding: 0.4rem 0
+      height: 3rem
+  a
+    position: relative
+    color: $c_font_header
+    cursor: pointer
+    height: 100%
+    line-height: 1
+    padding: 1.9rem 2rem 1.7rem
+    display: block
+    border-width: 0.2rem
+    transition: all 0.2s
+    &:hover
+      color: $c_accent_5
+      &~ .indicator
+        width: 90%
+    &.active
+      color: $c_accent_5
+      &~ .indicator
+        width: 90%
+
+  .indicator
+    height: 0.2rem
+    background: $c_accent_5
+    width: 0
+    margin: 0 auto
+    transition: all 0.5s
+
+  ul
+    height: 100%
+    width: 80%
+    margin: 0
+    padding: 0
+    // float: right
+    font-size: 1.2rem
+    li
+      position: relative
+      height: 100%
+      width: auto
+      margin: 0
+      padding: 0
+      float: right
+      display: block

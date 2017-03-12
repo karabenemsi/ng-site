@@ -1,98 +1,16 @@
-$( document ).ready(function() {
+$(function(){
+
+// Header Animation
+var headerController = new ScrollMagic.Controller();
+var headerOffset  = - window.innerHeight * 4.5 / 100;
+var navHeight = $('nav').height();
+var HeaderUpTween = new TweenLite.to($('nav'), 0, {bottom: 0,top: 'auto',left: 0, position: 'absolute'});
+var LogoTopTween = new TweenLite.fromTo($('nav .logo'), 0.5, {left: '-15vw', opacitiy: 0},{left: 0, opacity: 1});
+var HeaderTopTween = new TweenLite.to($('nav'), 0,{top: 0, left: 0 ,bottom: 'auto' , position: 'fixed'});
+var HeaderTopScene = new ScrollMagic.Scene({ triggerElement: '#js_trigger_header', offset: - navHeight, triggerHook: 'onLeave'}).setTween(HeaderTopTween).addTo(headerController);
+var LogoTopScene = new ScrollMagic.Scene({ triggerElement: '#js_trigger_header', offset: - navHeight, triggerHook: 'onLeave' }).setTween(LogoTopTween).addTo(headerController);
+var HeaderScene = new ScrollMagic.Scene({ triggerElement: '#js_trigger_header', offset: headerOffset }).setTween(HeaderUpTween).addTo(headerController);
 
 
-  $('.indexpage .js_openside').click(function(){
-    var $parent = $(this).parent().parent();
-    $parent.toggleClass('open');
-    $parent.siblings().toggleClass('closed');
-    if ($parent.siblings().hasClass('open')) {
-      $parent.siblings().toggleClass('open');
-    }if ($parent.hasClass('closed')) {
-      $parent.toggleClass('closed');
-    }
-  })
-
-
-
-  //nextslide
-  $('.nextslide').click(function(){
-    var id = $(this).parent().attr('id')
-    var $parent = $(this).parent()
-    id = parseInt(id) + 1
-    var $nextslide = $('#' + id)
-    console.log('#' + id);
-    $parent.toggleClass('active')
-    $nextslide.toggleClass('active')
-  });
-
-  $('.previouslide').click(function(e){
-    var id = $(this).parent().attr('id')
-    var $parent = $(this).parent()
-    id = parseInt(id) - 1
-    var $nextslide = $('#' + id)
-    console.log('#' + id);
-    $parent.toggleClass('active')
-    $nextslide.toggleClass('active')
-
-  });
-
-
-  //Refelemente
-
-  $('.reflisttags li code').click(function(){
-      $(this).siblings('.description').attr('data-open','true');
-  });
-
-  $('.reflisttags li .description').click(function(){
-    $(this).attr('data-open','false');
-  });
-
-
-  //sleep
-
-  if ($('body').hasClass('sleeppage')) {
-    imgrange = 146
-    randarray=[]
-    for (var i = 1; i <= imgrange; i++) {
-      randarray[i] = zfill(i, 3)
-    }
-    randarray.sort(function(){return 0.5 - Math.random()});
-    console.log(randarray);
-    imgstart = Math.floor((Math.random()*imgrange)+1)
-    imgname = 'assets/img/big/img_b_'
-    imgend = '.jpg'
-    i = 0
-    j = 1
-    setInterval(function(){
-      if(j%2 == 0){
-        console.log(randarray[i]);
-        if (i%2 == 0) {
-          $('#js_' + 1).attr('src',imgname + randarray[i] + imgend)
-        } else {
-          $('#js_' + 0).attr('src',imgname + randarray[i] + imgend)
-        }
-        if (i < imgrange) {
-          i++;
-        } else {
-          i = 0
-        }
-      } else {
-        $('#js_0').toggleClass('in').toggleClass('out');
-        $('#js_1').toggleClass('out').toggleClass('in');
-      }
-      j++;
-    },3000)
-  }
-
-  function zfill(number, size) {
-    number = number.toString();
-    while (number.length < size) number = "0" + number;
-    return number;
-  }
-
-  // CSS Examples
-  $('.calendar').click(function(){
-    $(this).toggleClass('calNoShadow');
-  });
 
 });

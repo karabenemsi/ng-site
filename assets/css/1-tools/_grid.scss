@@ -42,8 +42,8 @@
 
 // Namespaces
 // This stops me from being overzealous with enforcing classes
-$toast-grid-namespace: "tgrid" !default;
-$toast-grid-column-namespace: "tcol" !default;
+$toast-grid-namespace: "grid" !default;
+$toast-grid-column-namespace: "col" !default;
 
 // $col-groups are the column groups you want
 // For example, $col-groups: (3, 4, 5) will output:
@@ -104,7 +104,7 @@ $toast-pulls: true !default;
 
   // For each column width from 1 to the column group...
   @for $i from 1 through $group {
-    .#{$toast-grid-column-namespace}--#{$i}-of-#{$group} {
+    .#{$toast-grid-column-namespace}-#{$i}-of-#{$group} {
       @if percentage($i/$group) == percentage(1/1) {
         @extend %span-all;
       } @else if percentage($i/$group) == percentage(1/2) {
