@@ -1,10 +1,10 @@
 header.fullHero
-  .heroimg(style="background-image: url('assets/img/full/img_f_210.jpg')") 
+  .heroimg(style="background-image: url('assets/img/full/img_f_033.jpg')") 
   //-- 179
   .logo
-    svg.nglogo(viewbox='0 0 211.17332 80')
+    svg.nglogo.white(viewbox='0 0 211.17332 80')
       defs
-        lineargradient#linearGradient90(spreadmethod='pad', gradienttransform='matrix(239.61,3.30695,3.30695,-239.61,191.499,304.136)', gradientunits='userSpaceOnUse', y2='0', x2='1', y1='0', x1='0')
+        //- lineargradient#linearGradient90(spreadmethod='pad', gradienttransform='matrix(239.61,3.30695,3.30695,-239.61,191.499,304.136)', gradientunits='userSpaceOnUse', y2='0', x2='1', y1='0', x1='0')
           stop#stop82(offset='0', style='stop-opacity:1;stop-color:#1d4b27')
           stop#stop84(offset='0.032967', style='stop-opacity:1;stop-color:#1d4b27')
           stop#stop86(offset='0.747253', style='stop-opacity:1;stop-color:#69b530')
@@ -43,11 +43,11 @@ header.fullHero
           path#svg_spitze(d='m 442.441,371.621 17.344,97.68 -80.539,-68.563 63.195,-29.117')
 
   
-  nav#js_header.center
+  nav#js_header.bottom
     .container
       .logo
         a
-          svg.nglogo(xmlns:dc='http://purl.org/dc/elements/1.1/', xmlns:cc='http://creativecommons.org/ns#', xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#', xmlns:svg='http://www.w3.org/2000/svg', xmlns='http://www.w3.org/2000/svg', viewbox='0 0 211.17332 62.573334')
+          svg.nglogo(viewbox='0 0 211.17332 62.573334')
             defs
               lineargradient#linearGradient90(spreadmethod='pad', gradienttransform='matrix(239.61,3.30695,3.30695,-239.61,191.499,304.136)', gradientunits='userSpaceOnUse', y2='0', x2='1', y1='0', x1='0')
                 stop#stop82(offset='0', style='stop-opacity:1;stop-color:#1d4b27')
@@ -89,17 +89,14 @@ header.fullHero
 
       ul
         li
-          a  Home
+          a  Kontakt
+          .indicator
+        li
+          a  Aktionen
           .indicator
         li
           a  Produkte
           .indicator
         li
           a  About
-          .indicator
-        li
-          a  Aktionen
-          .indicator
-        li
-          a  Kontakt
           .indicator

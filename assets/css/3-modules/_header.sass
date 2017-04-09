@@ -1,5 +1,5 @@
 header
-  height: 100vh
+  height: 60vh
   position: absolute
   top: 0
   width: 100%
@@ -7,21 +7,21 @@ header
   .logo
     position: absolute
     top: 0
-    padding: 8rem 1.5rem 1.5rem
+    padding: 4rem 1rem
     left: 3rem
     z-index: 18
-    background: #fff
+    // background: #fff
     svg
       width: 20rem
 
   .heroimg
-    height: 100vh
+    height: 100%
     background:
       // image: url('../img/herobg.jpg')
       // image: url('../img/drawsanfran.jpg')
       // image: url('../img/88download.jpg')
       size: cover
-      position: top center
+      position: bottom center
       attachment: fixed
     width: 100%
     position: absolute
@@ -50,9 +50,11 @@ nav
   padding: 0
   box-shadow: $shw_standard
   &.bottom
+    // display: none
     position: absolute
     bottom: 0
   &.center
+    display: none
     position: fixed
     top: calc(50vh - 2.5rem)
 

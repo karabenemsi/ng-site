@@ -640,7 +640,6 @@ a:hover, a:focus {
 
 .gigantic, .huge, .large, .bigger, .big,
 h1, h2, h3, h4, h5, h6 {
-  color: #353a45;
   font-weight: bold;
 }
 
@@ -657,7 +656,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .large, h2 {
-  color: #353a45;
   font-size: 64px;
   font-size: 4rem;
   font-weight: 300;
@@ -733,7 +731,7 @@ hr {
 }
 
 header {
-  height: 100vh;
+  height: 60vh;
   position: absolute;
   top: 0;
   width: 100%;
@@ -742,12 +740,11 @@ header {
 header .logo {
   position: absolute;
   top: 0;
-  padding: 128px 24px 24px;
-  padding: 8rem 1.5rem 1.5rem;
+  padding: 64px 16px;
+  padding: 4rem 1rem;
   left: 48px;
   left: 3rem;
   z-index: 18;
-  background: #fff;
 }
 
 header .logo svg {
@@ -756,9 +753,9 @@ header .logo svg {
 }
 
 header .heroimg {
-  height: 100vh;
+  height: 100%;
   background-size: cover;
-  background-position: top center;
+  background-position: bottom center;
   background-attachment: fixed;
   width: 100%;
   position: absolute;
@@ -800,6 +797,7 @@ nav.bottom {
 }
 
 nav.center {
+  display: none;
   position: fixed;
   top: calc(50vh - 2.5rem);
 }
@@ -945,6 +943,10 @@ nav ul li {
   stroke: none;
 }
 
+.logo svg.nglogo.white path {
+  fill: #fff !important;
+}
+
 .container {
   width: 100%;
   max-width: 1200px;
@@ -962,8 +964,8 @@ section {
   background-attachment: fixed;
   width: 100%;
   min-height: 20vh;
-  padding: 96px 0;
-  padding: 6rem 0;
+  padding: 96px 0 160px;
+  padding: 6rem 0 10rem;
 }
 
 section * {
@@ -972,7 +974,7 @@ section * {
 }
 
 section:first-of-type {
-  margin-top: 100vh;
+  margin-top: 60vh;
   padding-top: 48px;
   padding-top: 3rem;
 }
@@ -982,8 +984,9 @@ section.fullheight {
 }
 
 section.conic {
-  margin-top: 160px;
-  margin-top: 10rem;
+  margin-top: 0;
+  padding: 16px 0;
+  padding: 1rem 0;
 }
 
 section.conic::before {
@@ -992,6 +995,8 @@ section.conic::before {
   background: inherit;
   -webkit-transform: rotate(3deg);
   transform: rotate(3deg);
+  -webkit-transform-origin: center top;
+  transform-origin: center top;
   height: 50vh;
   position: absolute;
   top: calc(-3vw - 5.1vh);
@@ -1005,6 +1010,8 @@ section.conic::after {
   background: inherit;
   -webkit-transform: rotate(-3deg);
   transform: rotate(-3deg);
+  -webkit-transform-origin: center top;
+  transform-origin: center top;
   height: 50vh;
   position: absolute;
   bottom: -3vw;
@@ -1045,6 +1052,199 @@ main img {
   width: 90%;
   box-shadow: 0 0 0.8rem rgba(30, 30, 30, .6);
   margin: 0 auto;
+}
+
+.button, input[type=submit] {
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border: 1px solid #000;
+  border-radius: 0.1rem;
+  text-align: center;
+  padding: 16px;
+  padding: 1rem;
+  line-height: 1;
+  font-size: 16px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  box-shadow: 0 0 0.8rem rgba(30, 30, 30, .6);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover, input[type=submit]:hover {
+  background: #000;
+  color: #fff;
+}
+
+.products .prod_item {
+  padding: 16px;
+  padding: 1rem;
+}
+
+.products .prod_item_inner {
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  height: 240px;
+  height: 15rem;
+  background-position: center center;
+  background-size: cover;
+  box-shadow: 0 0 0.8rem rgba(30, 30, 30, .6);
+  padding: 0;
+}
+
+.products .prod_item_inner img {
+  width: 100%;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+}
+
+.products .prod_item_inner:hover .prod_overlay {
+  top: 8px;
+  top: 0.5rem;
+  bottom: 8px;
+  bottom: 0.5rem;
+}
+
+.products .prod_item_inner:hover p.details, .products .prod_item_inner:hover p.price, .products .prod_item_inner:hover a, .products .prod_item_inner:hover hr {
+  opacity: 1;
+}
+
+.products .prod_overlay {
+  position: absolute;
+  background: #fff;
+  color: #353a45;
+  font-weight: 400;
+  top: 184px;
+  top: 11.5rem;
+  bottom: 8px;
+  bottom: 0.5rem;
+  left: 8px;
+  left: 0.5rem;
+  width: calc(100% - 1rem);
+  padding: 16px;
+  padding: 1rem;
+  box-shadow: 0 0 0.8rem rgba(30, 30, 30, .6);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.products .prod_overlay p {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.products .prod_overlay p.info {
+  font-size: 17.6px;
+  font-size: 1.1rem;
+  margin: 0 0 12.8px;
+  margin: 0 0 .8rem;
+}
+
+.products .prod_overlay p.details, .products .prod_overlay p.price {
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  font-weight: 400;
+}
+
+.products .prod_overlay hr {
+  margin: 0 0 8px;
+  margin: 0 0 0.5rem;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.products .prod_overlay p.price {
+  text-align: left;
+  font-size: 20.8px;
+  font-size: 1.3rem;
+  font-weight: 100;
+  padding: 16px 0;
+  padding: 1rem 0;
+}
+
+.products .prod_overlay p.details {
+  text-align: justify;
+}
+
+.products .prod_overlay a {
+  display: block;
+  opacity: 0;
+  width: 96px;
+  width: 6rem;
+  margin: 24px auto;
+  margin: 1.5rem auto;
+}
+
+.products .prod_full {
+  display: none;
+  position: fixed;
+  top: 53%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 60%;
+  min-width: 400px;
+  max-width: 1300px;
+  background: #fff;
+  height: 85vh;
+  max-height: 97vh;
+  overflow: hidden;
+  box-shadow: 0 0 0.8rem rgba(30, 30, 30, .6);
+  border-radius: 0.1rem;
+  z-index: 1000;
+  padding: 32px;
+  padding: 2rem;
+}
+
+.products .prod_full .bgheader {
+  background-color: #51a84d;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 160px;
+  height: 10rem;
+  width: 100%;
+  box-shadow: 0 0 0.8rem rgba(30, 30, 30, .6);
+}
+
+.products .prod_full p.price {
+  font-size: 20.8px;
+  font-size: 1.3rem;
+}
+
+.products .prod_full p {
+  clear: both;
+}
+
+.products .prod_full .button {
+  width: 128px;
+  width: 8rem;
+  margin: 32px auto;
+  margin: 2rem auto;
+}
+
+.button.more {
+  width: 160px;
+  width: 10rem;
+  margin: 48px auto;
+  margin: 3rem auto;
+  background: #73071F;
+  color: #fff;
+  border: none;
+}
+
+.button.more:hover {
+  background: #d30d39;
 }
 
 .hide {
